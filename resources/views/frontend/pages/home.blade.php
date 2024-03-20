@@ -1,53 +1,97 @@
 @extends('frontend.layout.app')
 
 @push('custom_css')
-
 @endpush
 
 @push('custom_js')
 @endpush
 
 @section('content')
-    <div class="mt-[100px] max-sm:mt-[50px] px-[100px] max-lg:px-[60px] max-md:px-[40px] max-sm:px-[20px]">
+    <div class="mt-[30px] px-[100px]">
         <style>
-            @media (max-width:1150px) {
-                .product {
-                    height: 100%;
-                }
+            svg path {
+                stroke-width: 9px;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                fill: none;
+                stroke-dasharray: 0 1000;
+                stroke-dashoffset: 1;
+                transition: 3s ease-in-out;
             }
 
-            @media (max-width:400px) {
-                .sm-1 {
-                    font-size: 18px;
-                }
-                .sm-2{
-                    font-size: 12px;
-                }
-                .sm-3{
-                    font-size: 16px;
-                }
+            .container {
+                position: relative;
             }
 
+            .text {
+                transition: 3s ease-in-out;
+            }
 
+            svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: calc(100% + 20px);
+                height: calc(100% + 20px);
+                transform: translate(-50%, -50%);
+                cursor: pointer;
+                color:red;
+            }
+            .text::after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                overflow: hidden;
+                width: 0%;
+                transition: all 3s ease-in-out;
+            }
 
+            .elem1{
+                text-align: center;
+                font-family: "Hind Siliguri", Sans-serif;
+                font-size: 32px !important;
+                font-weight: 700;
+            }
+
+            .elem{
+                color: #f2f2f2 !important;
+            }
+           
         </style>
         {{-- ------header-section----- --}}
         <section class="">
-            <div>
-                <h1 class="sm-1 text-center text-[30px] font-[600] text-[#1e90ff]">
-                    নবজাতককে দিন মোস্ট ওয়ান্টেড গিফট <br /> নিউবর্ন কেয়ার বান্ডেল (১৫ ইন ১)
-                </h1>
-            </div>
-            <div class="mt-[20px]">
-                <p class="sm-2 text-center text-[18px] font-[600] text-[black]">
-                    একটি শিশু জন্মের পর যে সকল প্রয়োজনীয় জিনিসগুলো দরকার হয়ে থাকে সেই </br>সকল আইটেমগুলো নিয়েই বানানো
-                    হয়েছে আমাদের এই মোস্ট ওয়ান্টেড নিউবর্ন  </br>
-                    কেয়ার বান্ডেল । সবকিছু একটি কম্বো কেয়ার বান্ডলে একসাথে পেয়ে যাচ্ছেন- </br>
-                    আমাদের কাছে বেস্ট কোয়ালিটি ,বেস্ট প্রাইজে এবং ফ্রি হোম ডেলিভারিতে।
-                </p>
-            </div>
+            <div class="elementor-widget-container bg-[#F37225] text-[#f2f2f2] px-[5px] py-[40px] rounded-[20px]">
+                <link
+                  rel="stylesheet"
+                  href="https://babyzen.site/wp-content/plugins/proelements-3.18.3/assets/css/widget-animated-headline.min.css"
+                />
+                <h2 class="elementor-headline e-animated elem1 relative">
+                  <span class="elementor-headline-plain-text elementor-headline-text-wrapper">
+                    নবজাতকের সুস্বাস্থ্য ও সুরক্ষায়
+                  </span>
+                  <span class="elementor-headline-dynamic-wrapper elementor-headline-text-wrapper">
+                    <span class=" elem elementor-headline-dynamic-text elementor-headline-text-active text-[#f2f2f2]">প্রিমিয়াম কোয়ালিটির কম্বো</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150" preserveAspectRatio="none" class="absolute top-1/2 left-1/2 w-[calc(100% + 20px)] h-[calc(100% + 20px)] transform-translate-1/2-1/2 cursor-pointer">
+                      <path class="animation-spin stroke-current stroke-red stroke-5 stroke-linecap-round stroke-linejoin-round transition-all duration-1000 ease-in-out" d="M7.7,145.6C109,125,299.9,116.2,401,121.3c42.1,2.2,87.6,11.8,87.3,25.7" style="stroke-dasharray: 0 1000; stroke-dashoffset: 1;"></path>
+                    </svg>
+                  </span>
+                  <span class="elementor-headline-plain-text elementor-headline-text-wrapper">প্যাকেজ</span>
+                </h2>
+              </div>
+
+              <div class="px-[10px] mt-6">
+                <p class="text-center leading-[30px] text-[#333333] text-[14px] font-sans font-[600]">
+                    এই প্যাকেজটি আপনার আদরের সোনামণির জন্যই তৈরি করা হয়েছে যা
+                    জন্মের আগে থেকে অবশ্যই সংগ্রহ করে রাখতে হবে। আপনাকে কিন্তু
+                    কষ্ট করে মার্কেট ঘুরে কিনতে হচ্ছে না । সবকিছু একসাথে পেয়ে
+                    যাচ্ছেন- আমাদের কাছে বেষ্ট কোয়ালিটি ,বেষ্ট প্রাইজে এবং ফ্রি
+                    হোম ডেলিভারিতে।
+                  </p>
+              </div>
+              
             <div class="height-[300px] mx-auto mt-[20px] w-[300px]">
-                <img class="h-full w-full" src="http://combo.taitaikids.com/public/storage/product/super-kid.png" alt="">
+                <img class="h-full w-full" src="http://combo.taitaikids.com/public/storage/product/super-kid.png"
+                    alt="">
             </div>
             <div class="mt-[20px]">
                 <p class="sm-3 text-center text-[18px] font-[600] text-[black]">
@@ -57,7 +101,7 @@
             </div>
             <div class="mt-[30px] flex justify-center">
                 <button data-area="order"
-                    class="border-[#000080] rounded-[5px] border-[2px] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">এখানে
+                    class="rounded-[5px] border-[2px] border-[#000080] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">এখানে
                     অর্ডার করুন
                 </button>
             </div>
@@ -66,12 +110,14 @@
         {{-- ------------why-buy-section---- --}}
         <section>
             <div>
-                <h2 class="sm-1 mt-[20px] text-center text-[30px] font-[600] text-[#D92044] underline">আমাদের থেকে কেন কিনবেন ?
+                <h2 class="sm-1 mt-[20px] text-center text-[30px] font-[600] text-[#D92044] underline">আমাদের থেকে কেন
+                    কিনবেন ?
                 </h2>
             </div>
             <div class="mt-6 grid grid-cols-2 max-md:grid-cols-1">
                 <div class="product h-[500px] border-[1px] border-[black] p-2">
-                    <img class="container h-full" src="http://combo.taitaikids.com/public/storage/product/baby-clothes.png" alt="">
+                    <img class="container h-full" src="http://combo.taitaikids.com/public/storage/product/baby-clothes.png"
+                        alt="">
                 </div>
                 <div class="border-[1px] border-[black] p-2">
                     <p class="mb-[2px] text-[18px] font-[500] text-[black]">
@@ -97,7 +143,7 @@
             </div>
             <div class="order mt-[30px] flex justify-center">
                 <button
-                    class="border-[#000080] rounded-[5px] border-[2px] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">এখানে
+                    class="rounded-[5px] border-[2px] border-[#000080] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">এখানে
                     অর্ডার করুন
                 </button>
             </div>
@@ -106,7 +152,8 @@
         {{-- --offer-section--- --}}
         <section>
             <div>
-                <h2 class="sm-1 mt-[20px] text-center text-[30px] font-[600] text-[#D92044] underline">আমাদের থেকে কেন কিনবেন ?
+                <h2 class="sm-1 mt-[20px] text-center text-[30px] font-[600] text-[#D92044] underline">আমাদের থেকে কেন
+                    কিনবেন ?
                 </h2>
             </div>
             <div class="mt-[10px] flex flex-col">
@@ -241,7 +288,7 @@
 
         {{-- ---price--section---- --}}
         <section>
-            <div class="mx-[80px] max-sm:mx-[2px] mt-[20px] rounded-[5px] border-[1px] border-[black] py-[40px]">
+            <div class="mx-[80px] mt-[20px] rounded-[5px] border-[1px] border-[black] py-[40px] max-sm:mx-[2px]">
                 <P class="sm-1 text-center text-[25px] text-[#100D71]">
                     অফার প্রাইস ১৫৫০/- টাকা
                 </P>
@@ -251,7 +298,7 @@
             </div>
             <div class="my-[20px] mt-[30px] flex justify-center">
                 <button
-                    class="border-[#000080] rounded-[5px] border-[2px] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">
+                    class="rounded-[5px] border-[2px] border-[#000080] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">
                     এখানে অর্ডার করুন
                 </button>
             </div>
@@ -266,7 +313,8 @@
             </div>
             <div class="mt-6 grid grid-cols-2 max-md:grid-cols-1">
                 <div class="product h-[600px] border-[1px] border-[black] p-2">
-                    <img class="container h-full" src="http://combo.taitaikids.com/public/storage/product/baby-clothes2.png" alt="">
+                    <img class="container h-full" src="http://combo.taitaikids.com/public/storage/product/baby-clothes2.png"
+                        alt="">
                 </div>
                 <div class="border-[1px] border-[black] p-2">
                     <p class="mb-[2px] text-[18px] font-[500] text-[black]">
@@ -296,7 +344,7 @@
             </div>
             <div class="mt-[30px] flex justify-center">
                 <button
-                    class="border-[#000080] rounded-[5px] border-[2px] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">এখানে
+                    class="rounded-[5px] border-[2px] border-[#000080] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">এখানে
                     অর্ডার করুন
                 </button>
             </div>
@@ -309,16 +357,18 @@
                     যারা আমাদের থেকে নিয়েছেন তাদের মন্তব্য
                 </h2>
             </div>
-            <div><img class="mx-auto" src="http://combo.taitaikids.com/public/storage/product/baby-clothes3.png" alt=""></div>
+            <div><img class="mx-auto" src="http://combo.taitaikids.com/public/storage/product/baby-clothes3.png"
+                    alt=""></div>
             <div class="flex flex-col">
                 <span class="my-[10px] text-center text-[25px] font-[600] text-[black]">ডেলিভারি চার্জ সম্পূর্ণ </span>
                 <span class="text-center text-[20px] font-[500] text-[#935E5Ek]">(সীমিত সময়ের জন্য)</span>
-                <span class="text-center text-[20px] font-[500] text-[#935E5Ek]"> আমরা দিচ্ছি সারাদেশে ক্যাশ অন হোম ডেলিভারি
+                <span class="text-center text-[20px] font-[500] text-[#935E5Ek]"> আমরা দিচ্ছি সারাদেশে ক্যাশ অন হোম
+                    ডেলিভারি
                     সার্ভ</span>
             </div>
             <div class="mt-[30px] flex justify-center">
                 <button
-                    class="border-[#000080] rounded-[5px] border-[2px] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">এখানে
+                    class="rounded-[5px] border-[2px] border-[#000080] px-[15px] py-[10px] text-center text-[16px] font-[600] text-[black] hover:bg-[black] hover:text-[white]">এখানে
                     অর্ডার করুন
                 </button>
             </div>
@@ -328,7 +378,7 @@
         {{-- -----footer-section---------- --}}
         <section class="mb-[100px]">
             <div>
-                <h2 class="sm-1 mb-[20px] mt-[100px] max-sm:mt-[50px] text-center text-[25px] font-[600] text-[black]">
+                <h2 class="sm-1 mb-[20px] mt-[100px] text-center text-[25px] font-[600] text-[black] max-sm:mt-[50px]">
                     কিভাবে অর্ডার করবো?
                 </h2>
             </div>
@@ -375,21 +425,21 @@
                             আপনার নাম লিখুন
                         </label><br />
                         <input type="text"
-                            class="my-[10px] w-full rounded-[5px] border-[1px] border-[black] pl-[10px] py-[10px]" />
+                            class="my-[10px] w-full rounded-[5px] border-[1px] border-[black] py-[10px] pl-[10px]" />
                     </div>
                     <div>
                         <label class="sm mt-[-8px] text-[20px] font-[700]">
                             আপনার ঠিকানা লিখুন
                         </label><br />
                         <input type="text"
-                            class="my-[10px] w-full rounded-[5px] border-[1px] border-[black] pl-[10px] py-[10px]" />
+                            class="my-[10px] w-full rounded-[5px] border-[1px] border-[black] py-[10px] pl-[10px]" />
                     </div>
                     <div>
                         <label class="sm-1 mt-[-8px] text-[20px] font-[700]">
                             মোবাইল নাম্বার
                         </label><br />
                         <input type="text"
-                            class="my-[10px] w-full rounded-[5px] border-[1px] border-[black] pl-[10px] py-[10px]" />
+                            class="my-[10px] w-full rounded-[5px] border-[1px] border-[black] py-[10px] pl-[10px]" />
                     </div>
                 </div>
 
