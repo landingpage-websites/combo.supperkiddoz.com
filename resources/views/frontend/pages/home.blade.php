@@ -90,7 +90,7 @@
               </div>
               
             <div class="height-[300px] mx-auto mt-[20px] w-[300px]">
-                <img class="h-full w-full" src="http://combo.taitaikids.com/public/storage/product/super-kid.png"
+                <img class="h-full w-full" src="/storage/public/n-11-1.jpg"
                     alt="">
             </div>
             <div class="mt-[20px]">
